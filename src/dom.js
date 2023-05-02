@@ -30,7 +30,7 @@ function DOMstuff() {
   const submit = document.querySelector("#submit");
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(name.value);
+    console.log(name.value, description.value, date.value);
     toggle_form(main, form);
   });
 }

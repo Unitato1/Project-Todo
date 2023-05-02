@@ -1,5 +1,5 @@
-function submiting(name, description, date, priority) {
-  console.log(name, description, date, priority);
+function submiting(name, description, date) {
+  console.log(name, description, date);
 }
 
 export { submiting };
