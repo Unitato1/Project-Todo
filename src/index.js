@@ -1,1 +1,2 @@
-console.log("Helleqqewqeso");
+import { DOMstuff } from "./dom";
+DOMstuff();
