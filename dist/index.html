@@ -90,7 +90,17 @@
           </div>
           <div><input type="radio" name="priority" value="low" />low</div>
           <button id="submit" type="submit">Add</button>
-          <button id="close">X</button>
+          <button id="close" data-form="todo_form">X</button>
+        </form>
+      </div>
+      <div id="add_project" class="hidden_form">
+        <form action="/" id="add_project_form" class="form">
+          <label for="name_project">Name For New Project</label>
+          <div>
+            <input type="text" name="name_project" id="name_project" />
+          </div>
+          <button type="submit" id="add_project_btn">Add Project</button>
+          <button class="close">X</button>
         </form>
       </div>
     </main>
