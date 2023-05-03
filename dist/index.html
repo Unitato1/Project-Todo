@@ -39,9 +39,60 @@
           <button id="plus_to_do">&#43;</button>
           <h1>Add-To-Do</h1>
         </div>
-        <div class="todo">001</div>
+        <div class="todo">
+          <div>Name</div>
+          <div>Date</div>
+          <div>Priority</div>
+          <div>Description</div>
+        </div>
       </div>
       <div id="footer">Made By @Name</div>
+      <div class="hidden_form">
+        <form action="/" method="GET" id="todo_form">
+          <label for="name">Activity</label>
+          <div>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Work"
+              required
+              maxlength="12"
+            />
+          </div>
+          <label for="description">Description</label>
+          <div>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="3"
+              maxlength="100"
+            ></textarea>
+          </div>
+          <label for="date">Date</label>
+          <div>
+            <input
+              type="date"
+              name="date"
+              id="date"
+              placeholder="1.1.2023"
+              required
+            />
+          </div>
+          <label for="priority">Priority</label>
+          <div>
+            <input type="radio" name="priority" value="high" required />high
+          </div>
+          <div>
+            <input type="radio" name="priority" value="medium" />
+            medium
+          </div>
+          <div><input type="radio" name="priority" value="low" />low</div>
+          <button id="submit" type="submit">Add</button>
+          <button id="close">X</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>
