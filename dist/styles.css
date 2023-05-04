@@ -261,3 +261,8 @@ form {
   height: 30vh;
   justify-content: center;
 }
+
+input[name="priority"]:hover {
+  font-size: 1rem;
+  color: red;
+}

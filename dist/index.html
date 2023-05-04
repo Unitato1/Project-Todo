@@ -23,8 +23,8 @@
         </div>
         <div class="projects_headline">Projects</div>
         <div class="projects_navbar">
-          <button class="nav_bar_project">today</button>
-          <button class="nav_bar_project">month</button>
+          <button class="nav_bar_project" id="today">today</button>
+          <button class="nav_bar_project" id="month">month</button>
         </div>
         <button id="plus">&#43;</button>
       </div>
@@ -93,7 +93,7 @@
         <form action="/" id="add_project_form" class="form">
           <label for="name_project">Name For New Project</label>
           <div>
-            <input type="text" name="name_project" id="name_project" />
+            <input type="text" name="name_project" id="name_project" required />
           </div>
           <button type="submit" id="add_project_btn">Add Project</button>
           <button class="close">X</button>
