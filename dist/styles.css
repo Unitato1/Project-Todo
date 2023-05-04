@@ -118,10 +118,16 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1vh;
+  gap: 2vh;
 }
-#content > * {
+#content > *,
+.todos > * {
   box-shadow: 40px 10px 10px #082f49;
+}
+.todos {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
 }
 #plus_to_do {
   background-color: transparent;

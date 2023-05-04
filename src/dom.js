@@ -1,4 +1,4 @@
-import { submiting } from "./form";
+import { submiting, todo } from "./form";
 
 function toggle_form(main, form) {
   main.className = main.className === "" ? "hidden_bg" : "";
@@ -27,25 +27,33 @@ const DOMstuff = () => {
   const form = document.querySelector(".hidden_form");
   const todo_form = document.querySelector("#todo_form");
   add_form.addEventListener("click", () => {
+    if (add_project.className === "form" || form.className === "form") {
+      return;
+    }
     toggle_form(main, form);
   });
 
-  let to_do;
   let priority;
   const submit = document.querySelector("#submit");
+  const todos = [];
+  const todos_div = document.querySelector(".todos");
   submit.addEventListener("click", (e) => {
     if (todo_form.checkValidity()) {
       e.preventDefault();
       priority = priority_radio.find((element) => {
         return element.checked;
       });
-      to_do = submiting().submit(
-        name.value,
-        description.value,
-        date.value,
-        priority.value
+      todos.push(
+        todo(name.value, description.value, date.value, priority.value)
       );
-      content.appendChild(to_do);
+      todos_div.replaceChildren();
+      for (let curr_todo of todos) {
+        todos_div.appendChild(submiting.submit_todo(curr_todo));
+      }
+      name.value = "";
+      description.value = "";
+      date.value = "";
+      priority.value = "";
       toggle_form(main, form);
     }
   });
@@ -56,11 +64,23 @@ const DOMstuff = () => {
     e.preventDefault();
     toggle_form(main, add_project);
   });
+  const projects = [];
+  const project_name = document.querySelector("#name_project");
+  const nav_bar = document.querySelector(".projects_navbar");
+
   add_project_btn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("ehee");
+    let project = submiting.sumbit_project(project_name.value);
+    nav_bar.appendChild(project);
+    projects.push(project_name.value);
+
+    project_name.value = "";
+    toggle_form(main, add_project);
   });
   plus.addEventListener("click", (e) => {
+    if (form.className === "form" || add_project.className === "form") {
+      return;
+    }
     toggle_form(main, add_project);
   });
 };
