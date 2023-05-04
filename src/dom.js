@@ -86,12 +86,6 @@ const DOMstuff = () => {
         todo(name.value, description.value, date.value, priority.value)
       );
       submiting.create_todos_of_project(todos_div, todos_navbar, todos);
-      // todos_div.replaceChildren();
-      // todos_navbar.replaceChildren();
-      // for (let curr_todo of todos) {
-      //   todos_navbar.appendChild(submiting.create_navbar_todos(curr_todo));
-      //   todos_div.appendChild(submiting.submit_todo(curr_todo));
-      // }
       name.value = "";
       description.value = "";
       date.value = "";

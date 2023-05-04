@@ -266,3 +266,13 @@ input[name="priority"]:hover {
   font-size: 1rem;
   color: red;
 }
+
+.low {
+  color: #7dd3fc;
+}
+.medium {
+  color: #bef264;
+}
+.high {
+  color: #b91c1c;
+}
